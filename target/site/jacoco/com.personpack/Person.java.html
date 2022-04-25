@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Person.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">main</a> &gt; <a href="index.source.html" class="el_package">com.personpack</a> &gt; <span class="el_source">Person.java</span></div><h1>Person.java</h1><pre class="source lang-java linenums">package com.personpack;
+import java.util.Scanner;
+
+import com.vehiclepack.Vehicle;
+
+public class Person {
+    private String firstName;
+    private String lastName;
+    private int age;
+    private String location;
+    private String travelVehicle;
+
+<span class="nc" id="L13">    public Person(String firstName, String lastName, int age) {</span>
+<span class="nc" id="L14">        this.firstName = firstName;</span>
+<span class="nc" id="L15">        this.lastName = lastName;</span>
+<span class="nc" id="L16">        this.age = age;</span>
+<span class="nc" id="L17">    }</span>
+    
+<span class="nc" id="L19">    public Person(String firstName, String lastName, int age, String location) {</span>
+<span class="nc" id="L20">        this.firstName = firstName;</span>
+<span class="nc" id="L21">        this.lastName = lastName;</span>
+<span class="nc" id="L22">        this.age = age;</span>
+<span class="nc" id="L23">        this.location = location;</span>
+<span class="nc" id="L24">    }</span>
+
+    public void introduction() {
+<span class="nc" id="L27">        System.out.println(&quot;Hello! My name is &quot; + firstName.toUpperCase() + &quot; &quot; + lastName.toUpperCase());</span>
+<span class="nc" id="L28">        System.out.println(&quot;I am &quot; + age + &quot;years old...&quot;);</span>
+<span class="nc" id="L29">    }</span>
+
+    public void travel(Vehicle vehicle){
+<span class="nc" id="L32">        Scanner scan = new Scanner(System.in);</span>
+
+<span class="nc" id="L34">        System.out.println(&quot;Where do you want to travel?&quot;);</span>
+<span class="nc" id="L35">        String destination = scan.nextLine();</span>
+<span class="nc" id="L36">        System.out.print(&quot;Travel Distance: &quot;);</span>
+<span class="nc" id="L37">        double distance = scan.nextDouble();</span>
+
+<span class="nc" id="L39">        double gasUsed = distance / vehicle.getGasConsume();</span>
+<span class="nc" id="L40">        scan.close();</span>
+        
+<span class="nc" id="L42">        System.out.println(&quot;Gas Used: &quot; + gasUsed);</span>
+<span class="nc" id="L43">        System.out.println(&quot;Remaining Gas&quot; + vehicle.getGasTank());</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">        if(gasUsed &lt; vehicle.getGasTank()){</span>
+<span class="nc" id="L45">            this.location = destination;</span>
+<span class="nc" id="L46">            this.travelVehicle = vehicle.getVehicleName();</span>
+<span class="nc" id="L47">            double newGas = vehicle.getGasTank() - gasUsed;</span>
+<span class="nc" id="L48">            vehicle.setGasTank(newGas);</span>
+<span class="nc" id="L49">            System.out.println(this.firstName + &quot; &quot; + this.lastName + &quot; traveled to &quot; + this.location.toUpperCase() + &quot; using &quot; + this.travelVehicle.toUpperCase());</span>
+<span class="nc" id="L50">            System.out.println(&quot;Current Remaining Gas: &quot; + vehicle.getGasTank());</span>
+<span class="nc" id="L51">        }else{</span>
+<span class="nc" id="L52">            System.out.println(&quot;Your vehicle lacks the gas tank capacity to travel to that distance...&quot;);</span>
+        }
+        
+<span class="nc" id="L55">    }</span>
+    public String getFirstName() {
+<span class="nc" id="L57">        return firstName;</span>
+    }
+
+    public void setFirstName(String firstName) {
+<span class="nc" id="L61">        this.firstName = firstName;</span>
+<span class="nc" id="L62">    }</span>
+
+    public String getLastName() {
+<span class="nc" id="L65">        return lastName;</span>
+    }
+
+    public void setLastName(String lastName) {
+<span class="nc" id="L69">        this.lastName = lastName;</span>
+<span class="nc" id="L70">    }</span>
+
+    public int getAge() {
+<span class="nc" id="L73">        return age;</span>
+    }
+
+    public void setAge(int age) {
+<span class="nc" id="L77">        this.age = age;</span>
+<span class="nc" id="L78">    }</span>
+
+    public String getLocation() {
+<span class="nc" id="L81">        return location;</span>
+    }
+
+    public void setLocation(String location) {
+<span class="nc" id="L85">        this.location = location;</span>
+<span class="nc" id="L86">    }</span>
+
+
+    public String getTravelVehicle() {
+<span class="nc" id="L90">        return travelVehicle;</span>
+    }
+
+
+    public void setTravelVehicle(String travelVehicle) {
+<span class="nc" id="L95">        this.travelVehicle = travelVehicle;</span>
+<span class="nc" id="L96">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>

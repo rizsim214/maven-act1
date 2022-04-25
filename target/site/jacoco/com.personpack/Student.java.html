@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">main</a> &gt; <a href="index.source.html" class="el_package">com.personpack</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">package com.personpack;
+
+public class Student extends Person {
+    private int yearLvl;
+
+    public Student(String firstName, String lastName, int age, int yearLvl) {
+<span class="nc" id="L7">        super(firstName, lastName, age);</span>
+<span class="nc" id="L8">        this.yearLvl = yearLvl;</span>
+<span class="nc" id="L9">    }</span>
+
+    public void introduction() {
+<span class="nc" id="L12">        System.out.println(&quot;Hello! My name is &quot; + getFirstName().toUpperCase() + &quot; &quot; + getLastName().toUpperCase());</span>
+<span class="nc" id="L13">        System.out.println(&quot;I am &quot; + getAge() + &quot;years old...&quot;);</span>
+<span class="nc" id="L14">        System.out.println(&quot;  I am currently a &quot; + this.yearLvl + &quot;th Year Student&quot;);</span>
+<span class="nc" id="L15">    }</span>
+
+    public int getYearLvl() {
+<span class="nc" id="L18">        return yearLvl;</span>
+    }
+
+    public void setYearLvl(int yearLvl) {
+<span class="nc" id="L22">        this.yearLvl = yearLvl;</span>
+<span class="nc" id="L23">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.4.201905082037</span></div></body></html>
